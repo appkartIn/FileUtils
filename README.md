@@ -20,3 +20,30 @@ For read and write string inside file in/from internal Storage
         // TODO Auto-generated catch block
         e.printStackTrace();
     }
+
+For read and write byteArray in/from external Storage
+
+    try {
+        FileUtil.writeFileInExternalStorage("test.png", image);
+    } catch (UnsupportedEncodingException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (ExternalStorageWriteException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+    try {
+        byte[] byteArr = FileUtil.readFileFromExternalStorage("test");
+        //String str = new String(byteArr, "UTF-8");
+        Log.d(TAG, "ZZZ byteArr : "+byteArr.toString());
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (ExternalStorageReadException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
